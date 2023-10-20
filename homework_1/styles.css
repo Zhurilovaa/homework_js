@@ -1,0 +1,213 @@
+/* CSS cite */
+
+:root {
+    --bg-color-red: #A61C1C;
+    --bg-color-white: #F9F9F9;
+    --bg-color-grey: #828282;
+    --text-color-grey: #F2F2F2;
+    --text-color-black: #000000;
+    --bg-color-brown: #A6806B;    
+}
+
+.main-content {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    gap: 0px;
+    background-color: var(--bg-color-white);
+
+    .main-content__navigation {
+        grid-area: A;
+    }
+
+    .main-content__comment {
+        grid-area: B;
+    }    
+}
+
+.navigation {    
+    /* Внешний вид */
+    background-color: var(--bg-color-white);
+    color: var(--text-color-black);
+    display: grid;
+    grid-template-areas: "An" "Bn";
+    grid-template-columns: auto;
+    grid-template-rows: 60% 40%;
+    justify-items: center;
+
+    .navigation__title {
+        grid-area: An;
+        align-self: center;
+        display: block;
+        width: 100%;
+
+        font-family: 'Inter', sans-serif;
+        font-weight: bold;
+        font-size: 4em;
+        text-align: center;
+    }
+
+    .navigation__references{
+        grid-area: Bn;
+        width: 45%;
+
+        display: grid;
+        grid-template-areas: "AnR BnR CnR";
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: auto;
+        justify-items: center;
+        align-content: center;
+    }
+
+    .navigation__reference-inst {
+        grid-area: AnR;
+    }
+    .navigation__reference-phone {
+        grid-area: BnR;
+    }
+    .navigation__reference-mail {
+        grid-area: CnR;
+    }
+}
+
+.comment{    
+     /* Внешний вид */
+    background-color: var(--bg-color-grey);
+    color: var(--text-color-grey);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .comment__paragraf {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1.1em;
+        text-align: center;
+        width: 75%;
+    }
+}
+
+.images__girl-with-hat{
+    grid-area: C;
+}
+.images__cup-of-coffee{
+    grid-area: D;
+}
+.images__brown-block {
+    grid-area: E;
+}
+.images__girl-blue-bg {
+    grid-area: F;
+}
+.images__girl-with-fl{
+    grid-area: H;
+}
+.images__doors{
+    grid-area: G;
+}
+.images__red-block {
+    grid-area: I;
+}
+.images__boy {
+    grid-area: J;
+}
+
+.empty-block-brown {
+    background-color: var(--bg-color-brown);
+}
+
+.empty-block-red {
+    background-color: var(--bg-color-red);
+    min-width: 185px;
+}
+
+.image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 1280px) {
+    .main-content{ 
+        grid-template-areas: "A C C F H" "A C C G I" "B D E G J";
+        grid-template-columns: clamp(250px, 40vw, 473px) auto auto auto auto;
+        grid-template-rows: clamp(250px, auto, 473px) clamp(185px, auto, auto) auto;
+    }
+    .empty-block-brown {
+        min-width: 165px;
+    }
+    .empty-block-red {
+        min-height: 232px;
+    }
+}
+
+@media (max-width: 1280px) {   
+    .main-content{ 
+        grid-template-areas: "A C C H" "A C C I " "B E E D" "F G G J";
+        grid-template-columns: clamp(250px, 40vw, 473px) clamp(199px, auto, auto) auto auto;
+        grid-template-rows: clamp(250px, auto, 473px) clamp(185px, auto, auto) auto auto;
+    }
+    .empty-block-brown {
+        min-width: 165px;
+    }
+    .empty-block-red {
+        min-height: 232px;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-content{ 
+        grid-template-areas: "A A A" "B B B" "C C G" "C C G" "F H D" "E J I";
+        grid-template-columns: auto;
+        grid-template-rows: clamp(320px, 40vw, 473px) clamp(320px, 20vw, 247px) auto;
+    }
+    .navigation {
+        min-width: 320px;
+    } 
+    .comment {
+        min-width: 320px;
+    } 
+}
+
+@media (max-width: 768px) {
+    .main-content{ 
+        grid-template-areas: "A A" "B B" "C G" "F H" "D E" "I J";
+        grid-template-rows: clamp(320px, 40vw, 473px) clamp(320px, 20vw, 247px) auto auto auto auto;
+    }
+    .navigation {
+        width: 100%;
+        min-width: 320px;
+    } 
+    .comment {
+        width: 100%;
+        min-width: 320px;
+    } 
+    
+}
+
+@media (max-width: 320px) { 
+    .main-content{ 
+        grid-template-areas: "A" "B" "C" "G" "F" "H" "D" "E" "J" "I";
+        grid-template-columns: auto;
+        grid-template-rows: clamp(320px, 40vw, 473px) clamp(320px, 20vw, 247px) auto auto auto auto auto auto auto auto;
+    }
+    .navigation {
+        min-width: 320px;
+    } 
+    .comment {
+        min-width: 320px;
+    } 
+    .empty-block-brown {
+        min-height: 165px;
+    }
+    .empty-block-red {
+        min-height: 232px;
+    }
+}
+
+
+
+
+
