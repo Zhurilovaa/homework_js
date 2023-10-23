@@ -23,6 +23,22 @@ function addSequence(firstTerm) {
 // На доработку => как избавиться от последнего вызова???))
 // console.log(addSequence(2))
 // console.log(addSequence(2)(3))
+// Вариант 2
+function addSequence_var2(firstTerm) {
+    let currSum = firstTerm;
+    let funcIN_var2 = function(nextTerm) {
+        currSum += nextTerm;
+        return funcIN_var2;
+    };
+    funcIN_var2.toString = () => currSum;
+    return funcIN_var2;
+}
+// При вызове console.log() необходимо функцию(это по сути объект) перевести в строковый тип
+// Это происходит с неявным вызовом toString (следовательно переопределили его)
+// Тоже не работает((((
+// console.log(addSequence_var2(2));
+// console.log(addSequence_var2(2)(3));
+// console.log(addSequence_var2(2)(3)(5));
 
 
 // №2
