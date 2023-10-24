@@ -8,26 +8,28 @@ function Queue_My_Event(){
     // Task_1
     setTimeout(function (cb) {
         console.log('Task_1');
-        // // Task_1_1
-        // setTimeout(function (cb) {
-        //     let liTask_1_1 = document.createElement('li');
-        //     liTask_1_1.innerHTML = 'Task_1_1';
-        //     ol.append(liTask_1_1);
-        // }, 0);
+        // Task_1_1
+        setTimeout(function (cb) {
+            let liTask_1_1 = document.createElement('li');
+            liTask_1_1.innerHTML = 'Task_1_1';
+            ol.append(liTask_1_1);
+        }, 0);
 
         // MicroTask_1_1
         Promise.resolve().then(function(result) {
+            console.log('MicroTask_1_2');
             let liMicroTask_1_2 = document.createElement('li');
             liMicroTask_1_2.innerHTML = 'MicroTask_1_2';
             ol.append(liMicroTask_1_2);
-            console.log('MicroTask_1_2');
+
+            // Render Task_1_2
+            console.log('RenderTask_1_2');
+            let liRenderTask_1 = document.createElement('li');
+            liRenderTask_1.innerHTML = 'Render Task_1_2';
+            ol.append(liRenderTask_1); 
         });  
         
-        // Render Task_1_2
-        let liRenderTask_1 = document.createElement('li');
-        liRenderTask_1.innerHTML = 'Render Task_1_2';
-        ol.append(liRenderTask_1);
-        console.log('RenderTask_1_2');
+        
     }, 0);
 
     // Task_2
