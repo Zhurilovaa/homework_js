@@ -29,7 +29,7 @@ function Queue_My_Event(){
             ol.append(liRenderTask_1_2); 
             count++;  
         });
-    }, 0);    
+    }, 5000);    
 
     // Task_2
     setTimeout(function (cb) {
@@ -47,7 +47,7 @@ function Queue_My_Event(){
             console.log(`MicroTask_2_2 (count = ${count})`);
             count++; 
         });  
-    }, 0);
+    }, 6000);
 
     // Task_3
     setTimeout(function (cb) {
@@ -64,7 +64,7 @@ function Queue_My_Event(){
             ol.append(liRenderTask_3_2);
             count++;
         });     
-    }, 0);
+    }, 7000);
 }
 
 Queue_My_Event();
