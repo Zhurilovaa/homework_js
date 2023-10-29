@@ -1,0 +1,47 @@
+@keyframes color_bg {
+    0%   { background: #eddcd2; }
+    20%  { background: #fff1e6; }
+    40%  { background: #f0efeb; }
+    60%  { background: #a5a58d; }
+    80%  { background: #b7b7a4; }
+    100% { background: #eddcd2; }
+}
+
+@keyframes color {
+    0%   { color: #cb997e; }
+    20%  { color: #cb997e; }
+    40%  { color: #cb997e; }
+    60%  { color: #fff1e6; }
+    80%  { color: #fff1e6; }
+    100% { color: #cb997e; }
+}
+
+
+.main-content {
+    width: 100%;
+    height: 100%;
+    background: #d4a373;
+    animation: color_bg 9s infinite linear;
+    text-align: center;
+    padding: 2em;
+}
+
+.main-content__title {
+    color: #cb997e;
+    animation: color 9s infinite linear;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 4em;
+    text-align: center;
+}
+
+.main-content__text {
+    margin-top: 30px;
+    margin-left: 30px;
+    color: #cb997e;
+    animation: color 9s infinite linear;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: left;
+}
