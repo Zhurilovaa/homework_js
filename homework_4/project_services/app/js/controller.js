@@ -1,11 +1,11 @@
 // Класс контроллер(фасад)  
-// Результаты всех запросов также вывести в консоль
 // Сделать нужно все запросы которые есть в API
 
 class ControllerService {
     // Конструктор для создания экземпляров класса
     constructor(typeOfService, urlServer) {
         this.typeOfService = typeOfService;
+
         (typeOfService === 'fetch') ?
             this.service = new FetchSrvice() :
             (typeOfService === 'XMLH') ?
@@ -13,20 +13,35 @@ class ControllerService {
                 console.log("Don't find service with this type!");
 
         this.url = urlServer;
-        console.log(`urlServer = ${this.url}`);
-        console.log("Всё работает!");
+        console.log("Всё работает! Controller создан!");
     }
 
     // Get запросы
     async GetAllTasks() {
-        const dataGet = await this.service.GetAllTasks(this.url);
-        console.log(`${this.typeOfService} : Get all task: `);
-        console.log(dataGet);
+        const dataGetAll = await this.service.GetAllTasks(this.url);
+        return dataGetAll;
     }
 
     async GetTaskById(id) {
-        const dataGet = await this.service.GetTaskById(this.url, id);
-        console.log(`${this.typeOfService} : Get task by id = ${id}: `);
-        console.log(dataGet);
+        const dataGetById = await this.service.GetTaskById(this.url, id);
+        return dataGetById;
+    }
+    
+    // Post запрос
+    async PostTask(newTask) {
+        let dataPost = await this.service.PostTask(this.url, newTask);        
+        return dataPost; 
+    }
+
+    // Patch запрос
+    async PatchTask(idPatch, patchTask) {
+        let dataPatch = await this.service.PatchTask(this.url, idPatch, patchTask);        
+        return dataPatch; 
+    }
+
+    // Delete запрос
+    async DeleteTask(idDelete) {
+        let statusDelete = await this.service.DeleteTask(this.url, idDelete);        
+        return statusDelete; 
     }
 }
