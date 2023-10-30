@@ -1,5 +1,5 @@
 {
-  "tabWidth": 2,
+  "tabWidth": 4, 
   "useTabs": false,
   "singleQuote": true,
   "quoteProps": "preserve",
@@ -8,5 +8,6 @@
   "bracketSpacing": true,
   "semi": true,
   "arrowParens": "always",
-  "bracketSameLine": true
+  "bracketSameLine": true,
+  "endOfLine":"auto"
 }
